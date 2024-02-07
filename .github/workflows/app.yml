@@ -60,8 +60,9 @@ jobs:
           -Dquarkus.quinoa.package-manager-install=false \
           -Dquarkus.container-image.build=true \
           -Dquarkus.container-image.push=true \
-          -Dquarkus.container-image.image=${{ env.REGISTRY }}/${GITHUB_REPOSITORY}:${{ env.TAG }} \
+          -Dquarkus.container-image.image=${{ env.REGISTRY }}/${GITHUB_REPOSITORY}-nca:${{ env.TAG }} \
           -Dquarkus.container-image.username=${{ github.actor }} \
+          -Dquarkus.docker.buildx.platform="linux/amd64,linux/arm64" \
           -Dquarkus.container-image.password=${{ secrets.GITHUB_TOKEN }}
         if: ${{ github.ref == 'refs/heads/main' }}
 
