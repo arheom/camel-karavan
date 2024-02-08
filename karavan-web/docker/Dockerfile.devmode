@@ -21,7 +21,7 @@ LABEL "org.opencontainers.image.url"="https://camel.apache.org"
 LABEL "org.opencontainers.image.licenses"="Apache 2.0"
 LABEL "org.opencontainers.image.version"="4.3.1"
 
-RUN apt-get update && apt-get install -y git docker amazon-ecr-credential-helper && apt-get clean
+RUN apt-get update && apt-get install -y git docker aws amazon-ecr-credential-helper && apt-get clean
 
 ENV JBANG_VERSION=0.114.0
 ENV CAMEL_VERSION=4.3.0
